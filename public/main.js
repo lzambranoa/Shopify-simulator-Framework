@@ -15,7 +15,7 @@
   \********************/
 /***/ (() => {
 
-eval("console.log('Gradiweb is online!!!');\n\n\n//# sourceURL=webpack://shopify-simulator/./src/app.js?");
+eval("/* This JavaScript code is adding a scroll event listener to the window object. When the user scrolls\r\nthe page, the function inside the event listener is executed. */\r\nwindow.onscroll = function() {\r\n    const header = document.getElementById(\"header\");\r\n    if (window.pageYOffset > 0) {\r\n        header.classList.add(\"sticky\");\r\n    } else {\r\n        header.classList.remove(\"sticky\");\r\n    }\r\n};\r\n\n\n//# sourceURL=webpack://shopify-simulator/./src/app.js?");
 
 /***/ })
 

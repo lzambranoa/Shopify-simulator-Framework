@@ -1,3 +1,4 @@
+const { watch } = require('fs');
 const path = require('path');
 
 module.exports = {
@@ -15,4 +16,5 @@ module.exports = {
     ],
   },
   mode: 'development',
+  watch: false,
 };
