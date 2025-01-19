@@ -106,4 +106,47 @@ body {
 }
 
 
+/*TopBar Styles*/
 
+.topbar {
+  background-color: $button_color;
+  color: $white-color;
+  font-size: 12px;
+  font-weight: 700;
+  overflow: hidden;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    padding: 8px 0px;
+    white-space: nowrap;
+    animation: marquee 50s linear infinite;
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+  }
+
+  &:hover .topbar__content {
+    animation-play-state: paused;
+  }
+
+  svg {
+    margin-right: 8px;
+  }
+
+  p {
+    margin: 0px;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

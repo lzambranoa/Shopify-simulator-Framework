@@ -97,4 +97,43 @@ body {
   border-radius: 5px;
 }
 
+/*TopBar Styles*/
+.topbar {
+  background-color: #762CFB;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 700;
+  overflow: hidden;
+}
+.topbar__content {
+  display: flex;
+  align-items: center;
+  padding: 8px 0px;
+  white-space: nowrap;
+  animation: marquee 50s linear infinite;
+}
+.topbar__text {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+.topbar:hover .topbar__content {
+  animation-play-state: paused;
+}
+.topbar svg {
+  margin-right: 8px;
+}
+.topbar p {
+  margin: 0px;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 /*# sourceMappingURL=styles.css.map */
