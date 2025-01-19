@@ -16,6 +16,14 @@
         "background_image": "hero_banner_img.avif"
       }
     },
+    "collections": {
+      "type": "collection",
+      "settings": {
+        "collection-text": "Latest Collection",
+        "image-left": "Ket.club",
+        "image-right": "Shuffle Essentials"
+      }
+    },
     "footer": {
       "type": "footer",
       "settings": {

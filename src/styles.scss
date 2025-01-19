@@ -1,4 +1,5 @@
 $background-color: #171717;
+$sticky-color: rgba(35, 33, 40, .8);
 $white-color: #FFFFFF;
 $purple-color: #856FFC;
 $color_black: #1D1D1F;
@@ -70,7 +71,7 @@ body {
   }
 
   &.sticky {
-    background-color: $background-color;
+    background-color: $sticky-color;
   }
 
   &__payment {
@@ -175,7 +176,6 @@ body {
 
   &__button {
     position: relative;
-    bottom: 10;
     z-index: 2;
     padding: 6px 20px; 
     color: $white-color;
@@ -231,3 +231,236 @@ body {
   }
 
 }
+
+/*Footer Styles*/
+
+.footer {
+  display: flex;
+  // flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: $background-color;
+
+
+  &__column {
+    flex: 1 1 30%;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+
+    &:nth-child(2) {
+      flex: 1 1 40%; // La columna central ocupa más espacio en desktop
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+
+    p {
+      margin: 0 5px;
+    }
+  }
+
+  &__links {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    font-weight: 500;
+
+    &_navegacion {
+      font-size: 24px;
+    }
+
+    &_policy {
+      font-size: 12px;
+    }
+
+    a {
+      text-decoration: none;
+      color: $white-color;
+    }
+
+    p {
+      font-size: 12px;
+    }
+
+  }
+
+  &__subscribe {
+    &__input-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      .footer__input {
+        width: 100%;
+        padding: 10px 10px 10px 30px;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+      }
+
+      .footer__arrow {
+        position: absolute;
+        left: 10px;
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+
+    a {
+      text-decoration: none;
+      font-size: 20px;
+      color: #495057;
+
+      &:hover {
+        color: #212529;
+      }
+    }
+  }
+
+  @media (max-width: 992px) {
+    // En dispositivos medianos
+    &__column {
+      flex: 1 1 100%; // Las columnas ocupan el ancho completo
+      &:nth-child(1) {
+        order: 2; // Primera columna pasa abajo
+      }
+      &:nth-child(3) {
+        order: 3; // Tercera columna pasa abajo
+      }
+    }
+  }
+
+  @media (max-width: 576px) {
+    // En dispositivos móviles
+    flex-direction: column;
+
+    &__column {
+      flex: 1 1 100%;
+    }
+
+  &__credits {
+    display: block;
+    margin-top: 35px;
+    font-size: 12px;
+
+    p {
+      margin: 0px;
+    }
+  }
+}
+}
+
+
+/* Latest Collection Styles*/
+
+.collection-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  h1 {
+    line-height: 88.7px;
+    font-size: 88px;
+    font-weight: 700;
+  }
+}
+
+.latest-section {
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 18px;
+
+    &__animated {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-end;
+      
+
+      &__transition {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        transition: transform 0.5s ease;
+
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+
+      p {
+        position: relative;
+        z-index: 2;
+        margin: 0 0 20px 20px;
+        color: $white-color;
+        font-size: 32px;
+        font-weight: 500;
+      }
+    }
+
+    &__card {
+      border-radius: 5px;
+    }
+
+    &__1 { 
+      grid-area: 1 / 1 / 2 / 2; 
+      
+    }
+    &__2 {
+      grid-area: 2 / 1 / 3 / 2;
+      }
+    &__3 {
+      grid-area: 3 / 1 / 4 / 2;
+      }
+
+    &__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 5px;
+      object-position: center;
+    }
+
+    @media (min-width: 768px) {
+      
+        
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+
+        &__card {
+          border-radius: 5px;
+        }
+        
+        
+        &__1 { 
+          grid-area: 1 / 1 / 2 / 2; 
+          height: 400px;
+        }
+        &__2 { 
+          grid-area: 1 / 2 / 2 / 3;
+          height: 400px;
+         }
+        &__3 { 
+          grid-area: 2 / 1 / 3 / 3;
+          height: 400px;
+         }
+    }
+  }
+  
+  
