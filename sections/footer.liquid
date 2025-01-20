@@ -20,7 +20,7 @@
     <div class="footer__column-3 footer__links"> 
         {% for link in settings['footer'].settings.links %}
             {% if forloop.index0 <= 3  %}
-                <a class="footer__links_navegacion" href="{{ link.url }}">{{ link.label | upcase }}</a>
+                <a class="footer__links_navegacion nav-link" href="{{ link.url }}">{{ link.label | upcase }}</a>
             {% endif %}
         {% endfor %}         
     </div>

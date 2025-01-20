@@ -76,6 +76,9 @@ body {
 .button__square {
   border-radius: 5px;
 }
+.button__round {
+  border-radius: 50%;
+}
 .button:hover {
   background-color: rgba(118, 44, 251, 0.9);
 }
@@ -399,9 +402,15 @@ input[type=email] {
 .footer__links_policy {
   font-size: 12px;
 }
+.footer__links_policy:hover {
+  color: #ced4da;
+}
 .footer__links a {
   text-decoration: none;
   color: #FFFFFF;
+}
+.footer__links a:hover {
+  color: #ced4da;
 }
 .footer__links p {
   font-size: 12px;
@@ -486,6 +495,11 @@ input[type=email] {
   margin: 0 auto;
   text-align: center;
 }
+.card-container__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .card-container .cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -519,6 +533,12 @@ input[type=email] {
   font-size: 16px;
   text-align: left;
 }
+.card-container .cards__content-container {
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
 .card-container .card {
   position: relative;
   width: 300px;
@@ -527,7 +547,9 @@ input[type=email] {
   border-radius: 10px;
   overflow: hidden;
   background: linear-gradient(90deg, rgba(118, 44, 251, 0.6), rgba(163, 148, 239, 0.6), rgba(133, 111, 252, 0.6));
-  transition: transform 0.3s ease;
+  opacity: 0; /* Comienza invisible */
+  transform: scale(0.8); /* Comienza con un tamaño más pequeño */
+  animation: fadeInScale 0.8s ease forwards; /* Animación */
 }
 .card-container .card img {
   width: 100%;
@@ -546,10 +568,18 @@ input[type=email] {
     scroll-snap-align: start;
   }
 }
-.card-container button {
-  display: inline !important;
-}
 
+/* Animación llamativa */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 .load-more-btn {
   margin: 20px 0;
 }

@@ -80,6 +80,10 @@ body {
     border-radius: 5px;
   }
 
+  &__round {
+    border-radius: 50%;
+  }
+
   &:hover {
     background-color: rgba(118, 44, 251, .9);;
   }
@@ -431,11 +435,19 @@ input[type="email"] {
 
     &_policy {
       font-size: 12px;
+
+      &:hover {
+        color: #ced4da;
+      }
     }
 
     a {
       text-decoration: none;
       color: $white-color;
+
+      &:hover {
+        color: #ced4da;
+      }
     }
 
     p {
@@ -542,6 +554,12 @@ input[type="email"] {
   margin: 0 auto;
   text-align: center;
 
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -576,6 +594,13 @@ input[type="email"] {
         font-size: 16px;
         text-align: left;
       }
+
+      &-container {
+        display: flex;
+        margin-top: 20px;
+        justify-content: space-between;
+        align-items: center;
+      }
     }
   }
 
@@ -584,11 +609,12 @@ input[type="email"] {
     width: 300px;
     height: 408px;
     padding: 5px;
-    // flex: 0 0 calc(100% / 1.5); /* Muestra una card completa y parte de otra */
     border-radius: 10px;
     overflow: hidden;
     background: $gradient;
-    transition: transform 0.3s ease;
+    opacity: 0; /* Comienza invisible */
+    transform: scale(0.8); /* Comienza con un tamaño más pequeño */
+    animation: fadeInScale 0.8s ease forwards; /* Animación */
 
 
     img {
@@ -610,10 +636,22 @@ input[type="email"] {
     }
   }
 
-  button {
-    display: inline !important;
-  }
+  // button {
+  //   display: inline !important;
+  // }
 
+}
+
+/* Animación llamativa */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .load-more-btn {
