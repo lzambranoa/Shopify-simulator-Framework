@@ -1,3 +1,7 @@
+# Prueba para el cargo de Desarrollador Web 
+
+La finalidad del presente repositorio es presentarme mi nombre es **<font color="blue">Leonardo Zambrano</font>** Soy Tecnologo en Desarrollo de Software con experiencia de más de tres años como 💻 **Desarrollador FrontEnd**  trabajando en tecnologías como Angular, React, JS, TypeScript estoy muy emocionado por poder seguir fortaleciendo mis habilidades de desarrollador y aportar compromiso para esta oportunidad laboral,  a continuacion se encuentra el repo con el desarrollo de la prueba tecnica para su respectiva evaluación.
+
 # Shopify Simulator Documentation
 
 Welcome to **Shopify Simulator**, a lightweight environment designed to help developers explore Shopify's Liquid templating language and dynamic section-based architecture. This project simulates Shopify's core functionalities, enabling developers to practice creating reusable components, iterating through data, and working with dynamic settings.

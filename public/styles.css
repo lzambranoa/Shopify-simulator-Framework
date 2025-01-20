@@ -587,7 +587,6 @@ input[type=email] {
   }
 }
 
-/* Animación llamativa */
 @keyframes fadeInScale {
   0% {
     opacity: 0;
@@ -606,9 +605,7 @@ input[type=email] {
   border-radius: 5px;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 18px;
+  gap: 20px;
 }
 .latest-section__animated {
   position: relative;
@@ -637,6 +634,7 @@ input[type=email] {
 }
 .latest-section__card {
   border-radius: 5px;
+  height: 400px;
 }
 .latest-section__1 {
   grid-area: 1/1/2/2;
@@ -656,13 +654,11 @@ input[type=email] {
 }
 @media (min-width: 768px) {
   .latest-section {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   }
   .latest-section__card {
     border-radius: 5px;
+    height: 400px;
   }
   .latest-section__1 {
     grid-area: 1/1/2/2;

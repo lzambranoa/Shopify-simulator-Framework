@@ -655,7 +655,6 @@ input[type="email"] {
 
 }
 
-/* Animación llamativa */
 @keyframes fadeInScale {
   0% {
     opacity: 0;
@@ -678,9 +677,7 @@ input[type="email"] {
     border-radius: 5px;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 18px;
+    gap: 20px;
 
     &__animated {
       position: relative;
@@ -714,6 +711,7 @@ input[type="email"] {
 
     &__card {
       border-radius: 5px;
+      height: 400px;
     }
 
     &__1 { 
@@ -738,13 +736,11 @@ input[type="email"] {
     @media (min-width: 768px) {
       
         
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        grid-column-gap: 20px;
-        grid-row-gap: 20px;
-
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        
         &__card {
           border-radius: 5px;
+          height: 400px;
         }
         
         

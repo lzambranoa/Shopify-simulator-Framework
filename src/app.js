@@ -27,14 +27,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+/* Este fragmento de código es responsable de gestionar la funcionalidad relacionada con la visualización y 
+la gestión de las tarjetas de la collecion de productos */
 document.addEventListener('DOMContentLoaded', function () {
     const cardsContainer = document.querySelector('.cards');
-    const loadMoreBtn = document.querySelector('.load-more-btn'); // Botón para cargar más
+    const loadMoreBtn = document.querySelector('.load-more-btn'); // Botón para cargar más y menos
   
     const allCards = Array.from(cardsContainer.children); // Todas las cards
     const totalCards = allCards.length;
     let currentIndex = 4; // Cards visibles inicialmente en desktop
-    let showMore = true; // Estado del botón (mostrar más/menos)
   
     // Función para actualizar la visibilidad en desktop
     function updateDesktopVisibility() {
@@ -49,10 +50,8 @@ document.addEventListener('DOMContentLoaded', function () {
       // Cambiar texto del botón según el estado
       if (currentIndex >= totalCards) {
         loadMoreBtn.textContent = 'VIEW LESS';
-        showMore = false; // Estado de "mostrar menos"
       } else {
         loadMoreBtn.textContent = 'VIEW ALL';
-        showMore = true; // Estado de "mostrar más"
       }
     }
   
