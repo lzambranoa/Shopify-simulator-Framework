@@ -1,47 +1,60 @@
-<footer class="container footer">
-    <section class="footer__column">
-        {% include 'logo-responsive.liquid' %}
-        <div class="footer__credits">
-            <p>
-                © 2024, Shuffle.store Operated by
-            </p> 
-            <a>
-                Studio Plaid.
-            </a> Need help?
-            <a> <br>
-                Email support@shuffle.store
-            </a>
-        </div>
-    </section>
-    <section class="footer__column">
-        <div class="footer__links">
-            {% for link in settings['footer'].settings.links %}
-                {% if forloop.index0 < 3 %}
-                    <a class="footer__links_navegacion" href="{{ link.url }}">{{ link.label | upcase }}</a>
-                {% endif %}
-            {% endfor %}
-        </div>
-        <div class="footer__links">
-            {% for link in settings['footer'].settings.links %}
-                {% if forloop.index0 >= 3 %}
-                    <a class="footer__links_policy" href="{{ link.url }}">{{ link.label | upcase }}</a>
-                {% endif %}
-            {% endfor %}
-        </div>
-        <div class="footer__links">
+
+<div class="footer container">
+
+    <div class="footer__column-1">
+        {% include 'logo-responsive.liquid' %}     
+    </div>
+
+    <div class="footer__column-2"> 
+        <p>
+            © 2024, Shuffle.store Operated by
+        </p> 
+        <a>
+            Studio Plaid.
+        </a> Need help?
+        <a> <br>
+            Email support@shuffle.store
+        </a>
+    </div>
+
+    <div class="footer__column-3 footer__links"> 
+        {% for link in settings['footer'].settings.links %}
+            {% if forloop.index0 <= 3  %}
+                <a class="footer__links_navegacion" href="{{ link.url }}">{{ link.label | upcase }}</a>
+            {% endif %}
+        {% endfor %}         
+    </div>
+
+    <div class="footer__column-4 footer__links">
+        {% for link in settings['footer'].settings.links %}
+            {% if forloop.index0 > 3 %}
+                <a class="footer__links_policy" href="{{ link.url }}">{{ link.label | upcase }}</a>
+            {% endif %}
+        {% endfor %}             
+    </div>
+
+    <div class="footer__column-5">
+        <div class="footer__column-5__content">
             <p>We accept all major cards, PayPal & crypto</p>
-            {% include 'payment-types.liquid' %}
+            {% include 'payment-types.liquid' %}       
         </div>
-    </section>
-    <section class="footer__column">
+    </div>
+
+    <div class="footer__column-6">
         <div class="footer__subscribe">
-            <input type="email" placeholder="Enter Email" class="footer__input">
-            <svg class="footer__arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#762CFB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right "><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-        </div>
+                <p>Subscribe and receive drop notifications</p>
+                <div class="footer__subscribe__input-container">
+                    <input type="email" placeholder="Enter Email" class="footer__input">
+                    <svg class="footer__arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#762CFB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right "><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                </div>
+            </div>
+    </div>
+
+    <div class="footer__column-7">
         <div class="footer__social">
-            <a href="#">FB</a>
-            <a href="#">TW</a>
-            <a href="#">IG</a>
+            <a href="#">FACEBOOK</a>
+            <a href="#">X(TWITTER)</a>
+            <a href="#">INSTAGRAM</a>
         </div>
-    </section>
-</footer>
+    </div>
+</div>

@@ -112,6 +112,16 @@ body {
 
 }
 
+input[type="email"] {
+  font-size: 12px;
+  font-weight: 500;
+  color: gray; /* Color de las letras */
+  background-color: $color_black; /* Fondo azul */
+  border: 2px solid $color_black; /* Borde del mismo color que el fondo */
+  border-radius: 25px; /* Bordes redondeados */
+  outline: none; /* Quita el borde de enfoque predeterminado */
+}
+
 /* Header Styles */
 
 .header {
@@ -145,9 +155,6 @@ body {
     align-items: center;
     padding: 16px 0px;
 
-    @media (max-width: 768px) {
-      justify-content: space-around;
-    }
   }
 
   &__access {
@@ -325,36 +332,96 @@ body {
 /*Footer Styles*/
 
 .footer {
-  display: flex;
-  // flex-wrap: wrap;
-  justify-content: space-between;
-  background-color: $background-color;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    margin-top: 20px;
+    background-color: $background-color;
 
-
-  &__column {
-    flex: 1 1 30%;
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-
-    &:nth-child(2) {
-      flex: 1 1 40%; // La columna central ocupa más espacio en desktop
+    @media (max-width:768px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+      grid-column-gap: 5px;
+      grid-row-gap: 5px;
     }
-  }
 
-  &__info {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+    &__column-1 {
+      grid-area: 1 / 1 / 3 / 2;
+      align-self: center;
 
-    p {
-      margin: 0 5px;
+      @media (max-width:768px) {
+        grid-area: 5 / 1 / 6 / 2;
+        align-self: start;
+      }
     }
-  }
+    &__column-2 {
+      grid-area: 3 / 1 / 4 / 2;
+      display: block;
+      font-size: 12px;
+    
+      p {
+        margin: 0px;
+      }
+
+      @media (max-width:768px) {
+        grid-area: 6 / 1 / 7 / 3;
+      }
+    }
+    &__column-3 {
+      grid-area: 1 / 2 / 2 / 3;
+      display: flex;
+
+      @media (max-width:768px) {
+        grid-area: 1 / 1 / 2 / 3;
+      }
+    }
+    &__column-4 {
+      grid-area: 2 / 2 / 3 / 3; 
+
+      @media (max-width:768px) {
+        grid-area: 2 / 1 / 3 / 3;
+      }
+    }
+    &__column-5 {
+      grid-area: 3 / 2 / 4 / 3;
+
+      &__content {
+        display: flex;
+        justify-content: center;
+        p {
+          margin: auto 5px;
+          font-size: 12px;
+        }
+
+        @media (max-width:768px) {
+          justify-content: start;
+        }
+      }
+
+      @media (max-width:768px) {
+        grid-area: 3 / 1 / 4 / 3;
+      }
+    }
+    &__column-6 {
+      grid-area: 1 / 3 / 3 / 6;
+
+      @media (max-width:768px) {
+        grid-area: 4 / 1 / 5 / 3;
+      }
+    }
+    &__column-7 {
+      grid-area: 3 / 3 / 4 / 4;
+
+      @media (max-width:768px) {
+        grid-area: 5 / 2 / 6 / 3;
+      }
+    }
 
   &__links {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin: 10px 0;
     font-weight: 500;
 
@@ -375,10 +442,21 @@ body {
       font-size: 12px;
     }
 
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: start;
+    }
+
   }
 
   &__subscribe {
+
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+
     &__input-container {
+      width: 63%;
       position: relative;
       display: flex;
       align-items: center;
@@ -392,60 +470,49 @@ body {
 
       .footer__arrow {
         position: absolute;
-        left: 10px;
+        right: 10px;
         width: 20px;
         height: 20px;
       }
+
+      @media (max-width:768px) {
+        width: 100%;
+      }
+    }
+
+    p {
+      font-size: 12px;
+      margin-bottom: 15px;
+    }
+
+    @media (max-width:768px) {
+      align-items: start;
     }
   }
 
   &__social {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
+    width: 60%;
+    float: inline-end;
 
     a {
       text-decoration: none;
-      font-size: 20px;
-      color: #495057;
+      font-size: 10px;
+      color: $white-color;
+      font-weight: 500;
 
       &:hover {
-        color: #212529;
+        color: #ced4da;
       }
     }
   }
 
   @media (max-width: 992px) {
-    // En dispositivos medianos
-    &__column {
-      flex: 1 1 100%; // Las columnas ocupan el ancho completo
-      &:nth-child(1) {
-        order: 2; // Primera columna pasa abajo
-      }
-      &:nth-child(3) {
-        order: 3; // Tercera columna pasa abajo
-      }
-    }
+    
   }
 
   @media (max-width: 576px) {
-    // En dispositivos móviles
-    flex-direction: column;
-
-    &__column {
-      flex: 1 1 100%;
-    }
-
-  &__credits {
-    display: block;
-    margin-top: 35px;
-    font-size: 12px;
-
-    p {
-      margin: 0px;
-    }
+    
   }
-}
 }
 
 
@@ -472,7 +539,6 @@ body {
 
 .card-container {
   width: 100%;
-  // max-width: 1200px;
   margin: 0 auto;
   text-align: center;
 
@@ -515,9 +581,10 @@ body {
 
   .card {
     position: relative;
-    height: 400px;
+    width: 300px;
+    height: 408px;
     padding: 5px;
-    flex: 0 0 calc(100% / 1.5); /* Muestra una card completa y parte de otra */
+    // flex: 0 0 calc(100% / 1.5); /* Muestra una card completa y parte de otra */
     border-radius: 10px;
     overflow: hidden;
     background: $gradient;
@@ -536,17 +603,21 @@ body {
       transform: scale(1.1); /* Efecto de zoom */
     }
 
-    @media (min-width: 768px) {
-      // width: 228px;
-      height: 400px;
+    @media (max-width: 768px) {
+      width: 220px;
+      height: 269px;
       scroll-snap-align: start;
     }
+  }
+
+  button {
+    display: inline !important;
   }
 
 }
 
 .load-more-btn {
-  margin: 0px;
+  margin: 20px 0;
 }
 
 
@@ -642,3 +713,18 @@ body {
   }
   
   
+  .parent {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    }
+    
+    .div1 { grid-area: 1 / 1 / 3 / 2; }
+    .div2 { grid-area: 3 / 1 / 4 / 2; }
+    .div3 { grid-area: 1 / 2 / 2 / 3; }
+    .div4 { grid-area: 2 / 2 / 3 / 3; }
+    .div5 { grid-area: 3 / 2 / 4 / 3; }
+    .div6 { grid-area: 1 / 3 / 3 / 4; }
+    .div7 { grid-area: 3 / 3 / 4 / 4; }
