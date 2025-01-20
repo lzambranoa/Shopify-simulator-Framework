@@ -1,0 +1,22 @@
+
+
+<section class="card-container container" id="all">
+  <div class="cards">
+    {% for product in products %}
+            <div class="cards__content">
+                <div class="card" data-index="{{ forloop.index0 }}">
+                    <img src="/assets/{{ product.image }}" alt="Imagen {{ forloop.index }}" />
+                </div>
+                <div>
+                    <p>
+                        {{ product.title }}
+                    </p>
+                    <p>
+                        {{product.price}} USD
+                    </p>
+                </div>
+            </div>
+        {% endfor %}
+  </div>
+  <button class="load-more-btn  button hero__button">VIEW ALL</button>
+</section>

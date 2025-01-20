@@ -1,7 +1,11 @@
 <nav class="header" id="header">
     {%  include 'topbar.liquid' %}
     <section class="container header__navigator">
-        <a href="/">
+        <div class="header__responsive">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="15" fill="none"><path stroke="#762CFB" stroke-width="3" d="M0 1.5h36M0 13.5h36"></path></svg>
+            {% include 'logo-responsive.liquid' %}
+        </div>
+        <a href="/" class="header__logo">
             <svg xmlns="http://www.w3.org/2000/svg" width="283" height="35" fill="none">
                 <g clip-path="url(#a)">
                 <mask id="b" width="182" height="30" x="0" y="0" maskUnits="userSpaceOnUse" style="mask-type:luminance">
@@ -18,19 +22,18 @@
         </section>
         <ul class="header__access">
             <li>
-                <a>
+                <a href="/#all" class="nav-link">
                     All Products
                 </a>
             </li>
             <li>
-                <a>
+                <a href="/#collection" class="nav-link">
                     Collections
                 </a>
             </li>
-            
-                <button class="button button__cart button__square">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none" style=""><path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.167 2.167h1.415c.266 0 .4 0 .507.049a.542.542 0 0 1 .23.2c.064.099.083.23.12.495L4.953 6.5m0 0 1.14 8.376c.145 1.063.217 1.594.47 1.994.225.352.546.633.925.807.43.198.967.198 2.04.198h9.27c1.022 0 1.533 0 1.95-.184.368-.162.683-.423.911-.754.259-.376.354-.877.545-1.88l1.434-7.528c.068-.353.101-.53.052-.668a.542.542 0 0 0-.238-.287c-.126-.074-.306-.074-.665-.074H4.952Zm5.881 16.25a1.083 1.083 0 1 1-2.166 0 1.083 1.083 0 0 1 2.166 0Zm8.667 0a1.083 1.083 0 1 1-2.167 0 1.083 1.083 0 0 1 2.167 0Z" style=""></path></svg>
-                </button>
+            <button class="button button__cart button__square">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none" style=""><path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.167 2.167h1.415c.266 0 .4 0 .507.049a.542.542 0 0 1 .23.2c.064.099.083.23.12.495L4.953 6.5m0 0 1.14 8.376c.145 1.063.217 1.594.47 1.994.225.352.546.633.925.807.43.198.967.198 2.04.198h9.27c1.022 0 1.533 0 1.95-.184.368-.162.683-.423.911-.754.259-.376.354-.877.545-1.88l1.434-7.528c.068-.353.101-.53.052-.668a.542.542 0 0 0-.238-.287c-.126-.074-.306-.074-.665-.074H4.952Zm5.881 16.25a1.083 1.083 0 1 1-2.166 0 1.083 1.083 0 0 1 2.166 0Zm8.667 0a1.083 1.083 0 1 1-2.167 0 1.083 1.083 0 0 1 2.167 0Z" style=""></path></svg>
+            </button>
             
         </ul>
     </section>
